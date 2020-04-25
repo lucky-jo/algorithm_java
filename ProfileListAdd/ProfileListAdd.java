@@ -15,9 +15,9 @@ public class ProfileListAdd {
 	 */
 	public static void main(String[] args) {
 //		profileArrayListAddEnd();
-		profileArrayListAddBeginning();
-		//profileLinkedListAddBeginning();
-		//profileLinkedListAddEnd();
+//		profileArrayListAddBeginning();
+//		profileLinkedListAddBeginning();
+		profileLinkedListAddEnd();
 	}
 
 	/**
@@ -93,6 +93,22 @@ public class ProfileListAdd {
 	 */
 	public static void profileLinkedListAddEnd() {
 		// TODO: FILL THIS IN!
+		Timeable timeable = new Timeable() {
+			List<String> list;
+
+			public void setup(int n) {
+				list = new LinkedList<String>();
+			}
+
+			public void timeMe(int n) {
+				for (int i=0; i<n; i++) {
+					list.add("a string");
+				}
+			}
+		};
+		int startN = 4000;
+		int endMillis = 1000;
+		runProfiler("ArrayList add end", timeable, startN, endMillis);
 	}
 
 	/**
