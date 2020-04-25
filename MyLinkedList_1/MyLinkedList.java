@@ -83,6 +83,13 @@ public class MyLinkedList<E> implements List<E> {
 	@Override
 	public void add(int index, E element) {
 		//TODO: FILL THIS IN!
+		if (index == 0) {
+			head = new Node(element, head);
+		} else {
+			Node node = getNode(index-1);
+			node.next = new Node(element, node.next);
+		}
+		size++;
 	}
 
 	@Override
