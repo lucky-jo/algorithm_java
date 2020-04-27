@@ -124,7 +124,15 @@ public class MyLinearMap<K, V> implements Map<K, V> {
 	@Override
 	public V put(K key, V value) {
 		// TODO: FILL THIS IN!
-		return null;
+		Entry entry = findEntry(key);
+		if( entry == null ) {
+			entries.add(new Entry(key, value));
+			return null;
+		} else {
+			V old = entry.getValue();
+			entry.setValue(value);
+			return old;
+		}
 	}
 
 	@Override
