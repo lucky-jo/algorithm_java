@@ -104,7 +104,8 @@ public class MyLinearMap<K, V> implements Map<K, V> {
 	@Override
 	public V get(Object key) {
 		// TODO: FILL THIS IN!
-		return null;
+		Entry entry = findEntry(key);
+		return entry != null ? entry.getValue() : null;
 	}
 
 	@Override
